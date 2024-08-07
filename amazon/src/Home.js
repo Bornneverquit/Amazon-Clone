@@ -13,19 +13,25 @@ const Home = () => {
         />
 
         <div className="home__row" >
-            <Product />
-            <Product />
+            <Product title="The Lean Statup" price={29.99} img={"hhh"}
+            rating={5} />
+            <Product title="The Lean Statup" price={29.99} img={"hhh"}
+            rating={5} />
         </div>
 
         
         <div className="home__row" >
-            {/* {product} */}
-            {/* {product} */}
-            {/* {product} */}
+        <Product title="The Lean Statup" price={29.99} img={"hhh"}
+            rating={5} />
+            <Product title="The Lean Statup" price={29.99} img={"hhh"}
+            rating={5} />
+            <Product title="The Lean Statup" price={29.99} img={"hhh"}
+            rating={5} />
         </div>
 
         <div className="home__row" >
-            {/* {product} */}
+        <Product title="The Lean Statup" price={29.99} img={"hhh"}
+            rating={5} />
         </div>
         </div>
     </div>
