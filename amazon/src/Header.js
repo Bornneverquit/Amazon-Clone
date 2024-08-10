@@ -3,12 +3,15 @@ import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <div className="header">
-      <Link to="/" >
-         <img src="http://pngimg.com/uploads/amazon/amazon.PNG11.png"  />
+      <Link to="/">
+        <img src="http://pngimg.com/uploads/amazon/amazon.PNG11.png" />
       </Link>
       <img
         className="header__logo"
@@ -33,11 +36,14 @@ function Header() {
           <span className="header__optionLineTwo">Prime</span>
         </div>
 
-        <Link to="/checkout" >              
-        <div className="header__optionBasket">
-          <ShoppingBasketIcon />
-          <span className="header__optionLineTwo header__basketCount">0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="header__optionBasket">
+            <ShoppingBasketIcon />
+            <span className="header__optionLineTwo header__basketCount">
+              {/* {optional chaining operator (?.), which safely checks if basket is null or undefined before trying to access length.} */}
+              {basket?.length}
+            </span>
+          </div>
         </Link>
       </div>
     </div>
